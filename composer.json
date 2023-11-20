@@ -1,0 +1,30 @@
+{
+    "name": "onetoweb/fashion-cloud",
+    "description": "Fashion Cloud API Client",
+    "keywords": [
+        "api",
+        "php",
+        "fashion-cloud"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/onetoweb/fashion-cloud",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan van 't Ende",
+            "email": "jvantende@onetoweb.nl"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle" : "^6.0 || ^7.0"
+    },
+    "require-dev": {
+        "symfony/error-handler": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Onetoweb\\FashionCloud\\": "src/"
+        }
+    }
+}
