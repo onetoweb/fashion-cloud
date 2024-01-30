@@ -1,6 +1,8 @@
 <?php
 
-namespace Onetoweb\FashionCloud\Endpoint;
+namespace Onetoweb\FashionCloud\Endpoint\Endpoints;
+
+use Onetoweb\FashionCloud\Endpoint\AbstractEndpoint;
 
 /**
  * Brand Endpoint.

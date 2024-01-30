@@ -4,7 +4,7 @@ namespace Onetoweb\FashionCloud;
 
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Client as GuzzleCLient;
-use Onetoweb\FashionCloud\Endpoint;
+use Onetoweb\FashionCloud\Endpoint\Endpoints;
 
 /**
  * Fashion Cloud Api Client.
@@ -55,10 +55,9 @@ class Client
      */
     private function loadEndpoints(): void
     {
-        $this->brand = new Endpoint\Brand($this);
-        $this->order = new Endpoint\Order($this);
-        $this->product = new Endpoint\Product($this);
-        $this->stock = new Endpoint\Stock($this);
+        foreach (Endpoints::list() as $name => $class) {
+            $this->{$name} = new $class($this);
+        }
     }
     
     /**
