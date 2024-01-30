@@ -16,7 +16,7 @@ List Brands
 
 .. code-block:: php
     
-    $result = $client->brands->list([
+    $result = $client->brand->list([
         'offset' => 0,
         'limit' => 10,
         'gln' => '',
