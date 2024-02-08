@@ -31,9 +31,9 @@ Load Product Image
     
     $imageId = '{image_id}';
     $result = $client->product->loadImage($imageId, [
-        'px' => '',
-        'watermark' => '',
-        'minAcceptableSize' => ''
+        'px' => '200', // possible values are: '200', '512', '1024'
+        'watermark' => false,
+        'minAcceptableSize' => '200'// possible values are: '200', '512', '1024'
     ]);
     
     // write data to file
