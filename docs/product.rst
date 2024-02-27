@@ -16,11 +16,23 @@ List Products
 
 .. code-block:: php
     
-    $brandId = '{brand_id}';
     $result = $client->product->list([
+        
         'offset' => 0,
         'limit' => 10,
-        'brand' => $brandId,
+        
+        // optional parameters (either brand, or gtin, or articleNumber must be provided)
+        'brand' => '{brand_id}',
+        'gtin' => '{gtin}',
+        'articleNumber' => '{article_Number}',
+        
+        // other optional parameters
+        'lang' => 'nl', // supported languages: en, de, ru, fr, nl, it, da, bg, et, fi, el, ga, hr, lv, lt, no, pl, pt, ro, sv, sk, sl, es, cs, hu, tr
+        'season' => 'spring_summer', // possible values are: fall_winter, spring_summer, nos, none
+        'seasonYear' => 2024,
+        'updatedSince' => '2024-02-27',
+        'includePreliminary' => false,
+        'includeProductsWithoutImages' => false,
     ]);
 
 
