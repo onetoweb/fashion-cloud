@@ -9,6 +9,7 @@ use Onetoweb\FashionCloud\Endpoint\Endpoints;
 /**
  * Fashion Cloud Api Client.
  */
+#[\AllowDynamicProperties]
 class Client
 {
     /**
