@@ -14,9 +14,9 @@ class Stock extends AbstractEndpoint
      * 
      * @param string $gtin
      * 
-     * @return array|null
+     * @return mixed
      */
-    public function list(string $gtin): ?array
+    public function list(string $gtin)
     {
         return $this->client->get("products/$gtin/stock");
     }
