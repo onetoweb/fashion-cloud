@@ -13,10 +13,10 @@
 
  - AllowDynamicProperties in Client to prevent php 8.2 deprecation notice
 
-## [1.0.2] - 2024-04-16
+## [1.0.3] - 2024-04-16
 
  - Stock::list remove return type declaration
  
-## [1.0.3] - 2026-09-09
+## [1.0.4] - 2026-09-09
 
  - Product::list remove return type declaration
