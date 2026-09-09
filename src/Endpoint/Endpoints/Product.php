@@ -14,9 +14,9 @@ class Product extends AbstractEndpoint
      * 
      * @param array $query = []
      * 
-     * @return array|null
+     * @return mixed
      */
-    public function list(array $query = []): ?array
+    public function list(array $query = [])
     {
         return $this->client->get('products', $query);
     }

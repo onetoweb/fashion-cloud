@@ -16,3 +16,7 @@
 ## [1.0.2] - 2024-04-16
 
  - Stock::list remove return type declaration
+ 
+## [1.0.3] - 2026-09-09
+
+ - Product::list remove return type declaration
