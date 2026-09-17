@@ -126,9 +126,12 @@ class Client
             RequestOptions::HEADERS => [
                 'Accept' => $this->acceptContentType
             ],
-            RequestOptions::QUERY => $query,
-            RequestOptions::JSON => $data
+            RequestOptions::QUERY => $query
         ];
+        
+        if (count($data) > 0) {
+            $options[RequestOptions::JSON] = $data;
+        }
         
         // make request
         $response = (new GuzzleCLient())->request($method, $this->getUrl($endpoint), $options);
