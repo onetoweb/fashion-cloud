@@ -16,7 +16,11 @@
 ## [1.0.3] - 2024-04-16
 
  - Stock::list remove return type declaration
- 
+
 ## [1.0.4] - 2026-09-09
 
  - Product::list remove return type declaration
+ 
+## [1.0.5] - 2026-09-17
+
+ - Only add json if data is present
