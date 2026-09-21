@@ -5,6 +5,7 @@ namespace Onetoweb\FashionCloud;
 use GuzzleHttp\RequestOptions;
 use GuzzleHttp\Client as GuzzleCLient;
 use Onetoweb\FashionCloud\Endpoint\Endpoints;
+use Onetoweb\FashionCloud\Config\Method;
 
 /**
  * Fashion Cloud Api Client.
@@ -26,27 +27,19 @@ class Client
     /**
      * @var string
      */
-    private $token;
-    
-    /**
-     * @var int
-     */
-    private $version;
-    
-    /**
-     * @var string
-     */
     private $acceptContentType = 'application/json';
     
     /**
      * @param string $token
      * @param int $version = 2
      */
-    public function __construct(string $token, int $version = 2)
-    {
-        $this->token = $token;
-        $this->version = $version;
+    public function __construct(
         
+        #[\SensitiveParameter]
+        private string $token,
+        
+        private int $version = 2
+    ) {
         // load endpoints
         $this->loadEndpoints();
     }
@@ -93,7 +86,7 @@ class Client
      */
     public function get(string $endpoint, array $query = [])
     {
-        return $this->request(self::METHOD_GET, $endpoint, [], $query);
+        return $this->request(Method::GET, $endpoint, [], $query);
     }
     
     /**
@@ -104,18 +97,18 @@ class Client
      */
     public function post(string $endpoint, array $data = [])
     {
-        return $this->request(self::METHOD_POST, $endpoint, $data);
+        return $this->request(Method::POST, $endpoint, $data);
     }
     
     /**
-     * @param string $method
+     * @param Method $method
      * @param string $endpoint
      * @param array $data = []
      * @param array $query = []
      * 
      * @return array|string|null
      */
-    public function request(string $method, string $endpoint, array $data = [], array $query = [])
+    public function request(Method $method, string $endpoint, array $data = [], array $query = [])
     {
         // add token to query
         $query['token'] = $this->token;
@@ -134,7 +127,7 @@ class Client
         }
         
         // make request
-        $response = (new GuzzleCLient())->request($method, $this->getUrl($endpoint), $options);
+        $response = (new GuzzleCLient())->request($method->value, $this->getUrl($endpoint), $options);
         
         // get contents
         $contents = $response->getBody()->getContents();

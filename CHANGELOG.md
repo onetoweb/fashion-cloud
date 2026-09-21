@@ -24,3 +24,9 @@
 ## [1.0.5] - 2026-09-17
 
  - Only add json if data is present
+
+## [1.1.0] - 2026-09-21
+
+ - Require php 8 or higher
+ - Drop support for guzzle 6
+ - Add SensitiveParameter attribute
