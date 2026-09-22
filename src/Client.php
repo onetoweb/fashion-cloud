@@ -19,12 +19,6 @@ class Client
     public const BASE_URL = 'https://api.fashion.cloud';
     
     /**
-     * Methods.
-     */
-    public const METHOD_GET = 'GET';
-    public const METHOD_POST = 'POST';
-    
-    /**
      * @var string
      */
     private $acceptContentType = 'application/json';

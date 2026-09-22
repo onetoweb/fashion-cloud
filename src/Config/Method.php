@@ -2,7 +2,8 @@
 
 namespace Onetoweb\FashionCloud\Config;
 
-enum Method: string {
+enum Method: string
+{
     case GET = 'GET';
     case POST = 'POST';
 }
